@@ -1,0 +1,37 @@
+Estos usuarios tienen contraseñas que en la base de datos fueron encriptadas
+
+buyer1
+
+    Email: buyer1@example.com
+    Contraseña: encryptedpassword3
+
+buyer2
+
+    Email: buyer2@example.com
+    Contraseña: encryptedpassword4
+
+vendor1
+
+    Email: vendor1@example.com
+    Contraseña: encryptedpassword1
+
+vendor2
+
+    Email: vendor2@example.com
+    Contraseña: encryptedpassword2
+
+user: marcos
+email:mamomeri@espol.edu.ec
+contraseña: 123
+buyer
+
+buyer 1 Contraseña hasheada para comparación manual: $2b$10$UWDI7M3Zex33w1OkkYn99u5h2aTbp8lO5yaAnKhiddFkUnJ/SaTSG
+buyer 2 Contraseña hasheada para comparación manual: $2b$10$7.Jhy0m55aq8db7qwnt/lutgZwSFlRJUBx/bYAuYra3zDq5vSnM5q
+vendor 1Contraseña hasheada para comparación manual: $2b$10$4DjF.SryyV5HdOvorSASs.kmocD6V//FD1zBIxNML0s47KiitzyEa
+vendor 2 Contraseña hasheada para comparación manual: $2b$10$/qXwXeU.ZOS1SetrGpzTJupO4FJ1DhZwF6scVpFPBPledioEeBvmG
+
+ ERROR code: 'EADDRINUSE', solucion:
+PS C:\Users\DELL\Desktop\Fruit Store\fruit-store-Backend> netstat -ano | findstr :3000
+  TCP    0.0.0.0:3000           0.0.0.0:0              LISTENING       4520
+  TCP    [::]:3000              [::]:0                 LISTENING       4520
+PS C:\Users\DELL\Desktop\Fruit Store\fruit-store-Backend> taskkill /PID 8272 /F
