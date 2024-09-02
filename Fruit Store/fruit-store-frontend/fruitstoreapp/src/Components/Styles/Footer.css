@@ -1,0 +1,66 @@
+footer {
+    background-color: #343a40; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 40px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+footer h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f8f9fa; /* Un poco más claro para destacar */
+    margin-bottom: 20px;
+}
+
+footer p, footer a {
+    color: #adb5bd; /* Color gris claro */
+    font-size: 16px; /* Tamaño de fuente más grande */
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #f8f9fa; /* Cambia el color al pasar el mouse */
+    text-decoration: underline;
+}
+
+footer .text-center {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #212529; /* Fondo más oscuro para el copyright */
+}
+
+footer .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .col-md-3, footer .col-lg-4, footer .col-xl-3, 
+footer .col-md-2, footer .col-lg-2, footer .col-xl-2,
+footer .col-md-4, footer .col-lg-3, footer .col-xl-3 {
+    margin-bottom: 20px;
+    flex: 1;
+    min-width: 220px;
+}
+
+footer .col-md-3 p, footer .col-lg-4 p, footer .col-xl-3 p,
+footer .col-md-2 p, footer .col-lg-2 p, footer .col-xl-2 p,
+footer .col-md-4 p, footer .col-lg-3 p, footer .col-xl-3 p {
+    margin-bottom: 0;
+}
+
+footer .text-reset {
+    color: inherit;
+}
+
+footer .text-reset:hover {
+    color: #f8f9fa; /* Cambia el color al pasar el mouse */
+}
