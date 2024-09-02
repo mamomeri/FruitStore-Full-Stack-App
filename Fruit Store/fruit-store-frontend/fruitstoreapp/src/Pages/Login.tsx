@@ -1,8 +1,8 @@
 import React from 'react';
-
+import './Styles/Login.css';
 const Login: React.FC = () => {
   return (
-    <div>
+    <div className="login-container">
       <h1>Login</h1>
       <p>Formulario de inicio de sesión.</p>
     </div>
