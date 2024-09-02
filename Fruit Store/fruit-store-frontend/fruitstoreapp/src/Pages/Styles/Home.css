@@ -1,0 +1,46 @@
+.hero-title {
+    margin-top: 100px; /* Ajusta el valor según el espacio que desees */
+}
+  
+.container {
+    max-width: 1200px;
+}
+  
+header h1 {
+    color: #333;
+}
+  
+header p {
+    color: #666;
+}
+  
+.ratio {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+.img-fluid {
+    transition: transform 0.3s ease;
+}
+  
+.img-fluid:hover {
+    transform: scale(1.05);
+}
+  
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+  
+.card {
+    margin: 10px;
+    border: none;
+}
+  
+.card-img-top {
+    width: 100px;  /* Ajusta el tamaño a 100px de ancho */
+    height: 100px; /* Ajusta el tamaño a 100px de alto */
+    object-fit: cover;
+}
