@@ -1,6 +1,7 @@
 
-import './Styles/Navbar.css'; // Importa los estilos personalizados
 import React from 'react';
+import './Styles/Navbar.css'; // Importa los estilos personalizados
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
