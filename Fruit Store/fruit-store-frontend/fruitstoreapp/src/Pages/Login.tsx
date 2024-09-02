@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const Login: React.FC = () => {
   useEffect(() => {
-    // Simula el manejo de la respuesta del backend después de la autenticación
+    // Procesa la respuesta del backend después del login
     fetch(`${import.meta.env.VITE_API_URL}/api/v1/auth/login`, {
       method: 'POST', // o 'GET' dependiendo de cómo esté configurado tu backend
       credentials: 'include',
@@ -10,8 +10,9 @@ const Login: React.FC = () => {
       .then(response => response.json())
       .then(data => {
         if (data.token) {
-          // Almacena el token en localStorage
+          // Almacena el token y el rol en localStorage
           localStorage.setItem('token', data.token);
+          localStorage.setItem('role', data.role);
 
           // Redirige basado en el rol del usuario
           if (data.role === 'buyer') {

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
@@ -10,8 +11,7 @@ import NotFound from './Pages/NotFound';
 import DashboardBuyer from './Pages/DashboardBuyer';
 import DashboardSeller from './Pages/DashboardSeller';
 import ProtectedRoute from './Routes/ProtectedRoutes';
-
-
+import LoginSuccess from './Pages/LoginSuccess'; // Importa el componente LoginSuccess
 
 const App: React.FC = () => {
   return (
@@ -25,6 +25,7 @@ const App: React.FC = () => {
               <Route path="/Products" element={<Products />} />
               <Route path="/login" element={<LoginRedirect />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/loginSuccess" element={<LoginSuccess />} /> {/* Agrega esta ruta */}
               <Route element={<ProtectedRoute role="buyer" />}>
                 <Route path="/dashboardBuyer" element={<DashboardBuyer />} />
               </Route>

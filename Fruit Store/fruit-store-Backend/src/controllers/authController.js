@@ -68,7 +68,10 @@ export const loginUserController = async (req, res, next) => {
     );
 
     // Devuelve el token y el rol al cliente
-    res.json({ token: token, role: user.role });
+    //res.json({ token: token, role: user.role });
+    const frontendUrl = "http://localhost:5175/";
+    res.redirect(`${frontendUrl}/loginSuccess?token=${token}&role=${user.role}`);
+
   } catch (error) {
     console.error('Error al iniciar sesión:', error);
     res.status(500).json({ message: 'Error al iniciar sesión' });
