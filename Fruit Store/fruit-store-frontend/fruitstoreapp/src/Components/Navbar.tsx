@@ -63,6 +63,11 @@ const Navbar: React.FC = () => {
                   </a>
                   <ul className="dropdown-menu dropdown-menu-dark">
                     <li>
+                      <a className="dropdown-item" href="/dashboard">
+                        Mi Dashboard
+                      </a>
+                    </li>
+                    <li>
                       <a className="dropdown-item" href="/products">
                         Consultar Mis Productos
                       </a>
@@ -91,6 +96,7 @@ const Navbar: React.FC = () => {
                   </li>
                 </>
               )}
+
             </ul>
           </div>
         </div>
