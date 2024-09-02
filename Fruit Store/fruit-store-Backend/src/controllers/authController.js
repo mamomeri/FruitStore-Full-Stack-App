@@ -1,9 +1,11 @@
 import { registerUser, loginUser } from '../services/userService.js'; // Asegúrate de que las rutas sean correctas
 import User from '../models/User.js';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 // Controlador para manejar el registro de usuarios
 export const registerUserController = async (req, res, next) => {
-    const { username, email, password, role } = req.body;
+  const { username, email, password, role } = req.body;
 
   try {
     // Verifica si el usuario ya existe
@@ -36,11 +38,10 @@ export const registerUserController = async (req, res, next) => {
     console.error('Error al registrar el usuario:', error);
     res.status(500).json({ message: 'Error al registrar el usuario' });
   }
-  };
-  
-  // Controlador para manejar el login de usuarios
-  export const loginUserController = async (req, res, next) => {
-    const { email, password } = req.body;
+};
+
+export const loginUserController = async (req, res, next) => {
+  const { email, password } = req.body;
 
   try {
     // Busca el usuario en la base de datos
@@ -66,11 +67,10 @@ export const registerUserController = async (req, res, next) => {
       { expiresIn: '1h' }
     );
 
-    // Devuelve el token al cliente
-    res.json({ token });
+    // Devuelve el token y el rol al cliente
+    res.json({ token: token, role: user.role });
   } catch (error) {
     console.error('Error al iniciar sesión:', error);
     res.status(500).json({ message: 'Error al iniciar sesión' });
   }
-  };
-  
+};

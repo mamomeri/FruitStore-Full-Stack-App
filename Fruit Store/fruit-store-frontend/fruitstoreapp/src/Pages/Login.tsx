@@ -1,18 +1,34 @@
-import React from 'react';
-import './Styles/Login.css';
+import React, { useEffect } from 'react';
+
 const Login: React.FC = () => {
-  return (
-    <div className="login-container">
-      <h1>Login</h1>
-      <p>Formulario de inicio de sesión.</p>
+  useEffect(() => {
+    // Simula el manejo de la respuesta del backend después de la autenticación
+    fetch(`${import.meta.env.VITE_API_URL}/api/v1/auth/login`, {
+      method: 'POST', // o 'GET' dependiendo de cómo esté configurado tu backend
+      credentials: 'include',
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.token) {
+          // Almacena el token en localStorage
+          localStorage.setItem('token', data.token);
 
-      FRAGMENTO DE CODIGO RETORNADO POR EL BACK CON EL ENPOINT 
-       POST /api/v1/auth/register - Registra un nuevo usuario.
-    POST /api/v1/auth/login - Inicia sesión y obtiene un token JWT.
+          // Redirige basado en el rol del usuario
+          if (data.role === 'buyer') {
+            window.location.href = '/dashboardBuyer';
+          } else if (data.role === 'seller') {
+            window.location.href = '/dashboardSeller';
+          } else {
+            console.error('Rol no reconocido:', data.role);
+          }
+        } else {
+          console.error('Error: Token no encontrado en la respuesta.');
+        }
+      })
+      .catch(error => console.error('Error durante el login:', error));
+  }, []);
 
-
-    </div>
-  );
+  return <p>Autenticando...</p>; // Muestra un mensaje mientras se procesa la autenticación
 };
 
 export default Login;
