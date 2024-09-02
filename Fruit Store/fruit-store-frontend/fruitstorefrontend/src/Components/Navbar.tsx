@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
                   </li>
                   <li>
                     <a className="dropdown-item" href="#">
-                      Another action
+                      Registrarse
                     </a>
                   </li>
                   <li>
@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
                   </li>
                   <li>
                     <a className="dropdown-item" href="#">
-                      Something else here
+                      Consultar Mis Productos 
                     </a>
                   </li>
                 </ul>

@@ -1,17 +1,19 @@
 import React from 'react';
 import Navbar from './Components/Navbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './Components/Footer';
 
 const App: React.FC = () => {
   return (
-    <div>
+    <div id="root">
       <Navbar />
       <div className="container">
         <h1>Welcome to Fruit Store</h1>
-        {/* Otras partes de tu aplicación */}
+        {/* Otros componentes */}
       </div>
+      <Footer />
     </div>
   );
 };
 
 export default App;
+

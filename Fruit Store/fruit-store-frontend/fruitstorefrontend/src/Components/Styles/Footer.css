@@ -1,0 +1,62 @@
+footer {
+    background-color: #212529;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  
+  footer h5 {
+    margin-bottom: 15px; /* Espaciado debajo de los títulos */
+    font-size: 18px; /* Tamaño de fuente del título */
+    font-weight: bold; /* Negrita para los títulos */
+  }
+  
+  footer p, footer a {
+    color: #adb5bd; /* Color gris claro para el texto */
+    font-size: 14px; /* Tamaño de fuente del texto */
+    margin-bottom: 10px; /* Espaciado debajo de los párrafos y enlaces */
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+  }
+  
+  footer a:hover {
+    color: #fff; /* Cambiar a blanco al pasar el ratón */
+    text-decoration: underline; /* Subrayar al pasar el ratón */
+  }
+  
+  footer .container {
+    display: flex; /* Usar flexbox para alinear elementos */
+    justify-content: space-between; /* Distribuir espacio entre las columnas */
+    flex-wrap: wrap; /* Permitir que las columnas se envuelvan en pantallas más pequeñas */
+  }
+  
+  footer .container div {
+    flex: 1; /* Cada columna toma el mismo espacio */
+    min-width: 200px; /* Asegura que las columnas no sean demasiado pequeñas */
+    margin: 10px; /* Margen entre las columnas */
+  }
+  
+  footer .container p {
+    margin: 5px 0; /* Ajustar margen de los párrafos dentro de las columnas */
+  }
+  
+  footer .container ul {
+    list-style: none; /* Quitar estilo de lista por defecto */
+    padding: 0; /* Quitar relleno por defecto */
+  }
+  
+  footer .container ul li {
+    margin-bottom: 10px; /* Espaciado debajo de cada elemento de la lista */
+  }
+  
+  footer .container ul li a {
+    color: #adb5bd; /* Color gris claro para enlaces en la lista */
+  }
+  
+  footer .container ul li a:hover {
+    color: #fff; /* Cambiar a blanco al pasar el ratón */
+  }
+  
