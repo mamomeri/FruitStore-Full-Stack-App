@@ -1,6 +1,10 @@
 import { Navigate, Outlet } from 'react-router-dom';
 
-const ProtectedRoute = ({ role }: { role: string }) => {
+interface ProtectedRouteProps {
+  role: string;
+}
+
+const ProtectedRoute = ({ role }: ProtectedRouteProps) => {
   const token = localStorage.getItem('token');
   const storedRole = localStorage.getItem('role');
 

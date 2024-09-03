@@ -96,12 +96,16 @@ authRouter.post('/login', loginUserController);
 
 // Ruta para la vista de login
 authRouter.get('/login', (req, res) => {
-    res.render('login');
+    const redirectUrl = req.query.redirectUrl || '/'; // Valor por defecto si no se pasa redirectUrl
+    res.render('login', { redirectUrl });
+   
 });
+
 
 // Ruta para la vista de register
 authRouter.get('/register', (req, res) => {
-    res.render('register');
+    const redirectUrl = req.query.redirectUrl || '/'; // Valor por defecto si no se pasa redirectUrl
+    res.render('register', { redirectUrl });
 });
 
 export default authRouter;

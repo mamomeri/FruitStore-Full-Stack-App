@@ -1,29 +1,35 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'universal-cookie';
 
 const LoginSuccess: React.FC = () => {
-  const location = useLocation();
+  const navigate = useNavigate();
+  const cookies = new Cookies();
 
   useEffect(() => {
-    const query = new URLSearchParams(location.search);
-    const token = query.get('token');
-    const role = query.get('role');
+    const token = cookies.get('authToken');
+    const role = cookies.get('role');
 
-    if (token) {
-      localStorage.setItem('token', token);
-      localStorage.setItem('role', role || '');
-
+    if (token && role) {
+      // Redirige al dashboard adecuado basado en el rol
       if (role === 'buyer') {
-        window.location.href = '/dashboardBuyer';
+        navigate('/dashboardBuyer');
       } else if (role === 'seller') {
-        window.location.href = '/dashboardSeller';
+        navigate('/dashboardSeller');
       } else {
-        console.error('Rol no reconocido:', role);
+        navigate('/'); // Redirigir a la página de inicio si el rol no es reconocido
       }
+    } else {
+      // Si no hay token o rol, redirige al 404
+      navigate('/404');
     }
-  }, [location]);
+  }, [navigate, cookies]);
 
-  return <p>Redirigiendo...</p>;
+  return (
+    <div>
+      <h1>Autenticación exitosa. Redirigiendo...</h1>
+    </div>
+  );
 };
 
 export default LoginSuccess;
