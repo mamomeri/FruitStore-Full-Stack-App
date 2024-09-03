@@ -5,8 +5,6 @@ import Register from '../Pages/Register';
 import NotFound from '../Pages/NotFound';
 import DashboardBuyer from '../Pages/DashboardBuyer';
 import DashboardSeller from '../Pages/DashboardSeller';
-import LoginSuccess from '../Pages/LoginSuccess';
-
 
 const AppRoutes = () => {
   return (
@@ -14,7 +12,6 @@ const AppRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<LoginRedirect />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/loginSuccess" element={<LoginSuccess />} />
       <Route path="/dashboardBuyer" element={<DashboardBuyer />} />
       <Route path="/dashboardSeller" element={<DashboardSeller />} />
       <Route path="*" element={<NotFound />} />
